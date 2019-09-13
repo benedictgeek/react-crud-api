@@ -25,7 +25,7 @@ module.exports.editBook = (req, res, next) => {
     
     Book.update({price, description, author}, {returning: true, where: {id: bookId}})
     .then( ([rowsUpdated, updatedBook]) => {
-        res.send(updatedBook);
+        res.status(200).json({status: 200, bookData: updatedBook});
     })
     .catch(err => {
         next(err);
@@ -48,7 +48,7 @@ module.exports.getBook = (req, res, next) => {
 
     Book.findOne({where: {id: bookId}})
     .then(book => {
-        res.status(200).json(book);
+        res.status(200).json({status: 200, bookData:book});
     })
 }
 

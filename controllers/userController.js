@@ -4,13 +4,17 @@ module.exports.createUser = (req, res, next) => {
     const name = req.body.name;
     const email = req.body.email;
     const password = req.body.password;
+    console.log(req.body);
     User.create(
         {
            name,email, password
         }
     )
     .then(result => {
-        res.send(result);
+        res.status(200).json({status: 200, result: result});
+    })
+    .catch(err => {
+        console.log(err);
     })
 }
 
