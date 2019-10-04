@@ -1,0 +1,108 @@
+﻿1
+00:00:02,480 --> 00:00:03,620
+Welcome to this course,
+
+2
+00:00:03,620 --> 00:00:07,060
+I'm extremely happy to welcome you on board. In this course,
+
+3
+00:00:07,070 --> 00:00:10,040
+you will learn Flutter and Dart from scratch,
+
+4
+00:00:10,070 --> 00:00:12,410
+no prior knowledge is required.
+
+5
+00:00:12,410 --> 00:00:17,900
+We'll start at the important basics and then work our way through all the core features up to more advanced
+
+6
+00:00:17,900 --> 00:00:23,950
+topics like working with native device futures, the Flutter internals, state management and much more.
+
+7
+00:00:23,950 --> 00:00:29,330
+This course is fully up-to-date and as I do it with all my courses, I will keep this cause up-to-date
+
+8
+00:00:29,660 --> 00:00:36,190
+and you will learn all the things, not just in theory but in an example-driven project focused way. We'll
+
+9
+00:00:36,200 --> 00:00:38,120
+build multiple apps throughout this course
+
+10
+00:00:38,120 --> 00:00:44,060
+so that you have concrete examples of how and when to apply a certain feature and you will learn all
+
+11
+00:00:44,060 --> 00:00:46,890
+the things by applying features on your own.
+
+12
+00:00:46,970 --> 00:00:51,560
+You can follow along and code along and by the end of the course, you will have built multiple apps and
+
+13
+00:00:51,560 --> 00:00:56,630
+you will be well-prepared to build your own apps with the knowledge gained in this course.
+
+14
+00:00:56,630 --> 00:01:01,700
+This course also has tons of quizzes and a lot of attached documents that allow you to dive deeper and
+
+15
+00:01:01,700 --> 00:01:03,250
+check your knowledge.
+
+16
+00:01:03,260 --> 00:01:06,230
+Now in addition, you get Q & A support in case you should get stuck
+
+17
+00:01:06,500 --> 00:01:11,430
+and therefore, I'm convinced the this course will turn you into a real Flutter developer.
+
+18
+00:01:11,480 --> 00:01:13,250
+Now who am I?
+
+19
+00:01:13,250 --> 00:01:17,720
+My name is Maximillian Schwarzmuller and I'm a five star rated instructor here on Udemy.
+
+20
+00:01:18,140 --> 00:01:23,120
+I got multiple best selling courses and this course here also is the best selling Flutter course and I'm
+
+21
+00:01:23,120 --> 00:01:25,230
+super excited about Flutter.
+
+22
+00:01:25,250 --> 00:01:31,280
+I've working with it since its early alpha days, which actually already are a couple of years ago and
+
+23
+00:01:31,340 --> 00:01:33,140
+I enjoy working with Flutter.
+
+24
+00:01:33,140 --> 00:01:39,110
+It's an amazing technology which allows you to build amazing mobile apps and I can't wait to dive into
+
+25
+00:01:39,110 --> 00:01:40,040
+that together with you.
+
+26
+00:01:40,250 --> 00:01:44,090
+So I guess, let's get started and let's dive into the most important question,
+
+27
+00:01:44,120 --> 00:01:45,920
+what exactly is Flutter?
+

@@ -1,4 +1,6 @@
 const User = require('../models/index').user;
+const jwt = require('jsonwebtoken');
+const secret = 'some soft password in place';
 
 module.exports.createUser = (req, res, next) => {
     const name = req.body.name;
@@ -36,11 +38,26 @@ module.exports.deleteUser = (req, res, next) => {
 }
 
 module.exports.userLogin = (req, res, next) => {
-    const email = req.body.email;
-    const password = req.body.password;
-    User.findOne({where: {email, password}})
-    .then(result => {
-        console.log(result);
-        res.status(200).json({user : result})
-    })
+    if(!req.user) {
+        res.status(500).send('Bad error occured');
+    }
+    
+    const token = jwt.sign({
+        id: req.user.id
+    }, secret)
+    res.status(200).json({token, user: req.user});
+
+    // const email = req.body.email;
+    // const password = req.body.password;
+    // User.findOne({where: {email, password}})
+    // .then(result => {
+    // })
+}
+
+module.exports.checkToken = (req, res, next) => {
+    if(!req.user) {
+        res.status(500).send('Bad error occured');
+    }
+
+    res.status(200).json({status: 200, user: req.user});
 }

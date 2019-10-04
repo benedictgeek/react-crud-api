@@ -3,9 +3,14 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+const passport = require("passport");
+const expressFileupload = require('express-fileupload');
 
 var bookRouter = require("./routes/books");
 var usersRouter = require("./routes/users");
+
+require("./authentication/passportJWT");
+require("./authentication/passportLocal");
 
 var app = express();
 
@@ -14,6 +19,9 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
 app.use(logger("dev"));
+app.use(expressFileupload({
+  createParentPath: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -21,11 +29,13 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST,DELETE,PATCH,PUT,GET");
+  res.setHeader("Access-Control-Allow-Methods", "POST,DELETE,PATCH, PUT, GET,OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   next();
 });
 
+
+app.use(passport.initialize());
 app.use("/books", bookRouter);
 app.use("/users", usersRouter);
 
@@ -40,9 +50,7 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render("error");
+  res.status(err.status || 500 ).json({status: err.status || 500, message: err.message})
 });
 
 module.exports = app;
